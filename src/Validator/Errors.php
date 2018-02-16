@@ -17,7 +17,7 @@ class Errors
     public function __toString(): string
     {
         return array_reduce($this->errors, function (string $carry, ValidationError $error) {
-            return $carry .= PHP_EOL . $error->getMessage() . " ({$error->getDataPath()})";
+            return $carry .= $error->getMessage() . " ({$error->getDataPath()})" . PHP_EOL;
         }, '');
     }
 }
